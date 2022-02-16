@@ -46,5 +46,19 @@ class MainActivity : AppCompatActivity() {
 
             startActivity(myIntent)
         }
+
+        btnNaverWebLink.setOnClickListener {
+
+            val myUri = Uri.parse("www.naver.com")
+            val myIntent = Intent(Intent.ACTION_VIEW, myUri)
+            startActivity(myIntent)
+        }
+
+        btnPlayStoreLink.setOnClickListener {
+
+            val myUri = Uri.parse("market://details?id=com.kakao.talk")
+            val myIntent = Intent(Intent.ACTION_VIEW, myUri)
+            startActivity(myIntent)
+        }
     }
 }
