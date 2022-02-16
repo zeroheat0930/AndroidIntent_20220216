@@ -19,11 +19,26 @@ class MainActivity : AppCompatActivity() {
             val myUri = Uri.parse("tel:${inputPhoneNum}") // 띄워쓰기 하면 안됨
 
 
-           val myIntent = Intent(Intent.ACTION_DIAL, myUri)
+            val myIntent = Intent(Intent.ACTION_DIAL, myUri)
 
             startActivity(myIntent)
 
         }
 
+        btnCall.setOnClickListener {
+
+            val inputPhoneNum = edtPhoneNum.text.toString()
+            val myUri = Uri.parse("tel:${inputPhoneNum}")
+            val myIntent = Intent(Intent.ACTION_CALL, myUri)
+            startActivity(myIntent)
+        } //하면 앱 뒤짐.(권한 때매)
+
+        btnSendTo.setOnClickListener {
+
+            val inputPhoneNum = edtPhoneNum.text.toString()
+            val myUri = Uri.parse("smsto:${inputPhoneNum}")
+            val myIntent = Intent(Intent.ACTION_SENDTO, myUri)
+            startActivity(myIntent)
+        }
     }
 }
